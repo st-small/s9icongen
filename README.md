@@ -13,6 +13,31 @@ Install `imagemagick` and `rmagick` via
 brew install imagemagick
 gem install rmagick
 ```
+## If you have any issues with instalation on MacOS
+
+If you already have ImageMagick installed uninstall it before continue.
+
+```bash
+brew uninstall imagemagick
+```
+
+Now let’s edit the brew formula.
+```bash
+brew edit imagemagick
+```
+
+You should set the url to ftp://ftp.imagemagick.org/pub/ImageMagick/ImageMagick-6.9.10-12.tar.gz and set the sha256 line to bb0224b9a530dc89b792594c5d1f04e568a976b456fd6c738715d2cf80ab8409.
+
+After saving the file you can install ImageMagick. You should also disable openmp and build it from source.
+
+```bash
+brew install imagemagick --disable-openmp --build-from-source
+```
+
+Now the RMagick installation should work like a charm!
+```bash
+gem install rmagick
+```
 
 ## Usage
 
